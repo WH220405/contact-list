@@ -1,42 +1,71 @@
+body {
+  background-color: #212529;
+}
+
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 65%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+table {
+  background-color: #f4fce3;
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  border-radius: 0.6em;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+th {
+  font-size: 2.4em;
+  padding-bottom: 0.8em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+tr {
+  height: 2em;
+  font-size: 1.4em;
 }
 
-.card {
+.row-titles {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.contacts:hover {
+  background-color: #d8f5a2;
+  cursor: pointer;
+}
+
+.contact {
+  background-color: #f4fce3;
+  width: 65%;
+  margin: auto;
   padding: 2em;
+  border-radius: 0.6em;
 }
 
-.read-the-docs {
-  color: #888;
+.contact h3 {
+  font-size: 3.2em;
+}
+
+.contact ul {
+  padding: 0;
+}
+
+.contact li {
+  list-style: none;
+  padding-bottom: 1em;
+  justify-content: center;
+  font-size: 1.4em;
+}
+
+.contact button {
+  background-color: yellowgreen;
+  color: lavender;
+  font-size: 1.4em;
+}
+
+.contact button:hover {
+  background-color: #406809;
 }
