@@ -1,48 +1,50 @@
 import { useState, useEffect } from "react";
+//import ContactList from "./components/ContactList";
+//import ContactRow from "./ContactRow";
+import './SelectedContact.module.css'
 
-export default function SelectedContact({ selectedContactId, onSelect }) {
+export default function SelectedContact({ selectedContactId }) {
   const [contact, setContact] = useState(null);
 
   useEffect(() => {
+    fetchContact();
+  }, [selectedContactId]);
+
     async function fetchContact() {
       try {
         const response = await fetch(
           `https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/${selectedContactId}`
         );
-        const data = await response.json();
-        setContact(data);
+        console.log(response)
+        const result = await response.json();
+        setContact(result);
       } catch (error) {
         console.error(error);
       }
     }
     fetchContact();
-  }, []);
-
-  function handleClose() {
-    onSelect(null);
-    setContact(null);
-  }
+  
+    function handleClick(){
+      setContact(null)
+    }
 
   return (
-    <>
-      <div className="contact">
-        {contact ? (
-          <div>
-            <h3>Contact: {contact.name}</h3>
-            <ul>
-              <li>
-                Lives at: {contact.address.suite} {contact.address.street}{" "}
-                {contact.address.city} {contact.address.zipcode}
-              </li>
-              <li>Phone: {contact.phone}</li>
-              <li>Works at: {contact.company.name}</li>
-            </ul>
-          </div>
-        ) : (
-          ""
-        )}
-        <button onClick={handleClose}>Return</button>
+    <div className="contact">
+    {contact ? (
+      <div>
+        <h3>Contact: {contact.name}</h3>
+        <ul>
+            <li>Address: {contact.address}</li>
+            <li>Email: {contact.email}</li>
+            <li>Phone: {contact.phone}</li>
+            <li>Website: {contact.website}</li>
+        </ul>
       </div>
-    </>
+    ) : (
+      ""
+    )}
+    <button onClick={handleClick}>Close</button>
+    </div>
+    
   );
 }

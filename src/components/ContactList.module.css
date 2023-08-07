@@ -1,0 +1,17 @@
+table, th, td {
+    border:1px solid black;
+    border-color: black;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th {
+    font-size: 2em;
+  }
+  
+  tr {
+    height: 2em;
+    font-size: 1em;
+  }
